@@ -1,5 +1,9 @@
 #!/bin/bash
 
+## change directory to script directory.
+## this is required because of the template files.
+cd $(dirname $0)
+
 ## vars
 
 LISTEN_IP=192.168.200.2
