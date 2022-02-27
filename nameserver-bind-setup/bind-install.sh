@@ -53,14 +53,16 @@ ls -l "$TMPDIR"/*
 cp -v "$TMPDIR/named.conf" /etc/named.conf
 cp -v "$TMPDIR/$MASTER_DOMAIN.db" /var/named/db.$MASTER_DOMAIN
 cp -v "$TMPDIR/$MASTER_DOMAIN.reverse.db" /var/named/db.reverse.$MASTER_DOMAIN
+rm -rfv "$TMPDIR"
 # EO copy files
 
 
 ## Enable and start the service named
 systemctl enable named
 systemctl restart named
+systemctl status named
 ##
 
-rm -rfv "$TMPDIR"
+
 
 #EOF
