@@ -1,0 +1,27 @@
+$TTL 1W
+@	IN	SOA	ns1.MASTER_DOMAIN.	root (
+			2019070700	; serial
+			3H		; refresh (3 hours)
+			30M		; retry (30 minutes)
+			2W		; expiry (2 weeks)
+			1W )		; minimum (1 week)
+	IN	NS	ns1.MASTER_DOMAIN.
+;
+; The syntax is "last octet" and the host must have an FQDN
+; with a trailing dot.
+30	IN	PTR	master0SUBDOMAIN.MASTER_DOMAIN.
+31	IN	PTR	master1SUBDOMAIN.MASTER_DOMAIN.
+32	IN	PTR	master2SUBDOMAIN.MASTER_DOMAIN.
+;
+9	IN	PTR	bootstrapSUBDOMAIN.MASTER_DOMAIN.
+
+;
+10	IN	PTR	apiSUBDOMAIN.MASTER_DOMAIN.
+10	IN	PTR	api-intSUBDOMAIN.MASTER_DOMAIN.
+10	IN	PTR	bastionSUBDOMAIN.MASTER_DOMAIN.
+10	IN	PTR	ext-infraSUBDOMAIN.MASTER_DOMAIN.
+;
+40	IN	PTR	worker0SUBDOMAIN.MASTER_DOMAIN.
+41	IN	PTR	worker1SUBDOMAIN.MASTER_DOMAIN.
+;
+;EOF

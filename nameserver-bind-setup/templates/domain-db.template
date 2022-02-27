@@ -1,0 +1,46 @@
+$TTL 1W
+@	IN	SOA	ns1.MASTER_DOMAIN.	root (
+			2019070700	; serial
+			3H		; refresh (3 hours)
+			30M		; retry (30 minutes)
+			2W		; expiry (2 weeks)
+			1W )		; minimum (1 week)
+	IN	NS	ns1.MASTER_DOMAIN.
+	IN	MX 10	smtp.MASTER_DOMAIN.
+;
+;
+
+;is a comment
+;ext-infra node is IP_HEADER.10
+
+ns1	IN	A	IP_HEADER.10
+smtp	IN	A	IP_HEADER.10
+;
+
+helper	IN	A	IP_HEADER.10
+helperSUBDOMAIN	IN	A	IP_HEADER.10
+
+;
+; The api identifies the IP of your load balancer haproxy.
+apiSUBDOMAIN		IN	A	IP_HEADER.10
+api-intSUBDOMAIN		IN	A	IP_HEADER.10
+bastionSUBDOMAIN		IN	A	IP_HEADER.10
+ext-infraSUBDOMAIN		IN	A	IP_HEADER.10
+
+;
+; The wildcard also identifies the load balancer haproxy.
+*.appsSUBDOMAIN		IN	A	IP_HEADER.10
+;
+; Create an entry for the bootstrap host.
+bootstrapSUBDOMAIN	IN	A	IP_HEADER.9
+;
+; Create entries for the master hosts.
+master0SUBDOMAIN		IN	A	IP_HEADER.30
+master1SUBDOMAIN		IN	A	IP_HEADER.31
+master2SUBDOMAIN		IN	A	IP_HEADER.32
+;
+; Create entries for the worker hosts.
+worker0SUBDOMAIN		IN	A	IP_HEADER.40
+worker1SUBDOMAIN		IN	A	IP_HEADER.41
+;
+;EOF
