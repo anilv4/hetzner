@@ -16,10 +16,10 @@ curl $URL_OCP_INSTALL -o "$TMPDIR/openshift-install-linux.tar.gz"
 tar xavf "$TMPDIR/openshift-client-linux.tar.gz" --directory "$TMPDIR"
 tar xavf "$TMPDIR/openshift-install-linux.tar.gz" --directory "$TMPDIR"
 
-ls "$TMPDIR/{oc,kubectl,openshift-install}"
+ls $TMPDIR/{oc,kubectl,openshift-install}
 
-mv -v "$TMPDIR/{oc,kubectl,openshift-install}" ~/.local/bin/
+mv -v $TMPDIR/{oc,kubectl,openshift-install} ~/.local/bin/
 
-rm -rfv "$TMPDIR"
+rm -rfv $TMPDIR
 
 #EOF
