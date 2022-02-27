@@ -47,8 +47,8 @@ s/SUBDOMAIN/$SUBDOMAIN/g" "$REVERSE_DB_DOMAIN_TEMPLATE" > "$TMPDIR/$MASTER_DOMAI
 ## copy files
 ls -l "$TMPDIR"
 cp "$TMPDIR/named.conf" /etc/named.conf
-cp "$TMPDIR/$MASTER_DOMAIN.db" /var/named/$MASTER_DOMAIN.db
-cp "$TMPDIR/$MASTER_DOMAIN.reverse.db" /var/named/$MASTER_DOMAIN.reverse.db
+cp "$TMPDIR/$MASTER_DOMAIN.db" /var/named/db.$MASTER_DOMAIN
+cp "$TMPDIR/$MASTER_DOMAIN.reverse.db" /var/named/db.reverse.$MASTER_DOMAIN
 # EO copy files
 
 
