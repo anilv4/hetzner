@@ -4,6 +4,9 @@
 ## this is required because of the template files.
 cd $(dirname $0)
 
+echo "Exit if bind installed."
+[ -f /etc/named.conf ] && exit
+
 ## vars
 
 LISTEN_IP=192.168.200.2
