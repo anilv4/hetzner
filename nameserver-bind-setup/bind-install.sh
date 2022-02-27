@@ -4,18 +4,20 @@
 ## this is required because of the template files.
 cd $(dirname $0)
 
-echo "Exit if bind installed."
+echo "Exit if bind installed"
 [ -f /etc/named.conf ] && exit
 
 ## vars
 
-LISTEN_IP=192.168.200.2
-ALLOW_QUERY_IP="192.168.200.0"
+LISTEN_IP=192.168.122.2
+ALLOW_QUERY_IP="192.168.122.0"
 ALLOW_QUERY_SUBNET="24"
 FORWARDERS_IPS="1.1.1.1"
-IP_HEADER="192.168.200"
-REVERSE_IP_HEADER="200.168.192"
+IP_HEADER="192.168.122"
+REVERSE_IP_HEADER="122.168.192"
 MASTER_DOMAIN="example.com"
+
+# no need to change the below vars.
 NAMED_CONF_TEMPLATE="templates/named-conf.template"
 DB_DOMAIN_TEMPLATE="templates/domain-db.template"
 REVERSE_DB_DOMAIN_TEMPLATE="templates/domain-reverse-db.template"
@@ -63,9 +65,6 @@ rm -rfv "$TMPDIR"
 ## Enable and start the service named
 systemctl enable named
 systemctl restart named
-systemctl status named
-##
+systemctl status  --no-pager named
 
-
-
-#EOF
+## EOF
