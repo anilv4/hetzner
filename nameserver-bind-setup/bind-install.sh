@@ -49,10 +49,10 @@ s/SUBDOMAIN/$SUBDOMAIN/g" "$REVERSE_DB_DOMAIN_TEMPLATE" > "$TMPDIR/$MASTER_DOMAI
 ## EO replacements
 
 ## copy files
-ls -l "$TMPDIR"
-cp "$TMPDIR/named.conf" /etc/named.conf
-cp "$TMPDIR/$MASTER_DOMAIN.db" /var/named/db.$MASTER_DOMAIN
-cp "$TMPDIR/$MASTER_DOMAIN.reverse.db" /var/named/db.reverse.$MASTER_DOMAIN
+ls -l "$TMPDIR"/*
+cp -v "$TMPDIR/named.conf" /etc/named.conf
+cp -v "$TMPDIR/$MASTER_DOMAIN.db" /var/named/db.$MASTER_DOMAIN
+cp -v "$TMPDIR/$MASTER_DOMAIN.reverse.db" /var/named/db.reverse.$MASTER_DOMAIN
 # EO copy files
 
 
@@ -62,3 +62,5 @@ systemctl restart named
 ##
 
 rm -rfv "$TMPDIR"
+
+#EOF
